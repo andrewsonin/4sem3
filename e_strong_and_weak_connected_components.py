@@ -29,10 +29,10 @@ def kosaraju(graph, reversed_graph, number_of_vertexes):
 
 
 def weak_components(graph, number_of_vertexes):
-    using_set, number_of_connected_components = set(), 0
+    used_vertexes, number_of_connected_components = set(), 0
     for using_vertex in range(number_of_vertexes):
-        if using_vertex not in using_set:
-            dfs(using_vertex, graph, using_set, stacking=False)
+        if using_vertex not in used_vertexes:
+            dfs(using_vertex, graph, used_vertexes, stacking=False)
             number_of_connected_components += 1
     return number_of_connected_components
 
